@@ -1,0 +1,8 @@
+@font-face {
+  font-family: Mikadan;
+  src: url(Mikadan.ttf);
+}
+
+#header{
+    font-family: 'Mikadan', Fallback, sans-serif;
+}
