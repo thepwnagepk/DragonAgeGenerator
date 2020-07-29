@@ -6,3 +6,8 @@
 #header{
     font-family: 'Mikadan', Fallback, sans-serif;
 }
+
+body *{
+    transition: 1s;
+}
+

@@ -45,6 +45,7 @@ var CharacterROCName;
 
 //Attempt 2 - The Hard Code
 
+
 var Choice = Math.floor(Math.random() * 7); //0-6
 
 var CharacterROCName2;
@@ -113,3 +114,19 @@ switch (Choice) {
 document.getElementById("CharacterName").innerHTML = CharacterROCName2;
 document.getElementById("ShortDesc").innerHTML = ShortDesc;
 document.getElementById("LongDesc").innerHTML = LongStoryDesc;
+
+var SetDragonFont = document.getElementById("SetDragonFont");
+
+SetDragonFont.addEventListener('click', function () {
+    document.getElementById("DragonFontAll").href = "DragonFontAll.css";
+    sessionStorage.setItem('DragonFont', true);
+});
+
+var DragonFontActivated = sessionStorage.getItem('DragonFont');
+if (DragonFontActivated == null) {
+    sessionStorage.setItem('DragonFont', false);    
+}
+if (DragonFontActivated == true){
+    document.getElementById("DragonFontAll").href = "DragonFontAll.css";
+}
+//sessionStorage and localStorage wont make it so the Dragon Font is on if it is true in storage, and i dont know why.
