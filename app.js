@@ -136,13 +136,6 @@ if (DragonFontActivated == true){
 }
 //sessionStorage and localStorage wont make it so the Dragon Font is on if it is true in storage, and i dont know why.
 
-//warriorclasschoice
-// berserker, reaver, champion, templar
-//rogueclasschoice
-// assassin, bard, duelist, ranger
-//mageclasschoice
-// arcane warrior, blood mage, shapeshifter, spirit healer
-
 var ClassRoll1;
 var ClassRoll2;
 var WarriorSpecials = ["Berserker", "Reaver", "Champion", "Templar"];
@@ -150,7 +143,6 @@ var RogueSpecials = ["Assassin", "Bard", "Duelist", "Ranger"];
 var MageSpecials = ["Arcane Warrior", "Blood Mage", "Shapeshifter", "Spirit Healer"];
 var Specialisation1;
 var Specialisation2;
-
 
 ClassChoice();
 
@@ -171,11 +163,9 @@ function ClassChoice(){
             Specialisation1 = MageSpecials[ClassRoll1];
             Specialisation2 = MageSpecials[ClassRoll2];
             break;
-    }
+    } 
     
-    //make 3 arrays with classes
-    // get from array at number
-    
+    document.getElementById("Class").innerHTML = "<strong>" + Specialisation1 + "</strong> and <strong>" + Specialisation2 + "</strong>";
 }
 
 function SecondNumber(){
@@ -184,7 +174,6 @@ function SecondNumber(){
      SecondNumber();
  }   
 }
-
 
 
 
