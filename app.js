@@ -39,25 +39,28 @@ if (Race == 1) {
 var OriginName;
 
 
-var ClassName;
+
 var CharacterROCName;
 
 
 //Attempt 2 - The Hard Code
-
+//Warriors are 0, Rogues are 1, Mages are 2
 
 var Choice = Math.floor(Math.random() * 7); //0-6
 
 var CharacterROCName2;
 var ShortDesc;
 var LongStoryDesc;
+var ClassNum;
 
 function WarriorOrRogue() {
     var WORChoice = Math.floor(Math.random() * 2);
     if (WORChoice == 1) {
         CharacterROCName2 += " Warrior";
+        ClassNum = 0;
     } else {
         CharacterROCName2 += " Rogue";
+        ClassNum = 1;
     }
 }
 
@@ -78,6 +81,7 @@ switch (Choice) {
         CharacterROCName2 = 'Human Mage';
         ShortDesc = MageShort;
         LongStoryDesc = MageLong;
+        ClassNum = 2;
         break;
     case 2:
         CharacterROCName2 = 'Dwarf Commoner';
@@ -107,6 +111,7 @@ switch (Choice) {
         CharacterROCName2 = 'Elf Mage';
         ShortDesc = MageShort;
         LongStoryDesc = MageLong;
+        ClassNum = 2;
         break;
 
 }
@@ -130,3 +135,66 @@ if (DragonFontActivated == true){
     document.getElementById("DragonFontAll").href = "DragonFontAll.css";
 }
 //sessionStorage and localStorage wont make it so the Dragon Font is on if it is true in storage, and i dont know why.
+
+//warriorclasschoice
+// berserker, reaver, champion, templar
+//rogueclasschoice
+// assassin, bard, duelist, ranger
+//mageclasschoice
+// arcane warrior, blood mage, shapeshifter, spirit healer
+
+var ClassRoll1;
+var ClassRoll2;
+var WarriorSpecials = ["Berserker", "Reaver", "Champion", "Templar"];
+var RogueSpecials = ["Assassin", "Bard", "Duelist", "Ranger"];
+var MageSpecials = ["Arcane Warrior", "Blood Mage", "Shapeshifter", "Spirit Healer"];
+var Specialisation1;
+var Specialisation2;
+
+
+ClassChoice();
+
+function ClassChoice(){
+ ClassRoll1 = Math.floor(Math.random() * 4); //0-3
+ SecondNumber();  
+    
+    switch (ClassNum) {
+        case 0:
+            Specialisation1 = WarriorSpecials[ClassRoll1];
+            Specialisation2 = WarriorSpecials[ClassRoll2];
+            break;
+        case 1:
+            Specialisation1 = RogueSpecials[ClassRoll1];
+            Specialisation2 = RogueSpecials[ClassRoll2];
+            break;
+        case 2:
+            Specialisation1 = MageSpecials[ClassRoll1];
+            Specialisation2 = MageSpecials[ClassRoll2];
+            break;
+    }
+    
+    //make 3 arrays with classes
+    // get from array at number
+    
+}
+
+function SecondNumber(){
+    ClassRoll2 = Math.floor(Math.random() * 4);//0-3
+    if(ClassRoll2 == ClassRoll1){
+     SecondNumber();
+ }   
+}
+
+
+
+
+console.log("Number 1:" + ClassRoll1);
+console.log("Number 2:" + ClassRoll2);
+console.log("Spec 1:" + Specialisation1);
+console.log("Spec 2:" + Specialisation2);
+
+
+
+
+
+
